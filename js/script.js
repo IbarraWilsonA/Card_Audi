@@ -1,11 +1,16 @@
-const card = document.querySelector('.card-container');
-const audio = document.querySelector('.audio');
+const cards = document.querySelectorAll('.card-container');
+const audios = document.querySelectorAll('.audio');
 
-card.addEventListener('mouseenter', () => {
-    audio.play();
-});
+cards.forEach((card, index) => {
 
-card.addEventListener('mouseleave', () => {
-    audio.pause();
-    audio.currentTime = 48.29;
+    const audio = audios[index];
+
+    card.addEventListener('mouseenter', () => {
+        audio.play();
+    });
+
+    card.addEventListener('mouseleave', () => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
 });
